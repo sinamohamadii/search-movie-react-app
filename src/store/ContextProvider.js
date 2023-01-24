@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import MoviesContext from "./context";
 
 
 const ContextProvider = props => {
+    const navigate = useNavigate();
+
     const [movies, setmovies] = useState([]);
 
     useEffect(
@@ -25,12 +28,14 @@ const ContextProvider = props => {
         []
     );
 
+    const search = (inputVlaue) => {
+        navigate(`/?search=${inputVlaue}`);
+    };
+
     const moviesValue = {
         movies: movies,
         filter(inputVlaue) { },
-        search(inputVlaue) { 
-            console.log(inputVlaue);
-        }
+        search: search
     };
 
     return (

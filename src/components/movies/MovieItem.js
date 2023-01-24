@@ -7,7 +7,7 @@ const MovieItem = props => {
                 <div
                     className={`${classes.glassEffect} text-sm font-bold w-[80%] h-1/3 px-2 flex justify-between items-center absolute z-50`}>
                     <div className='w-1/2'>
-                        <p>{props.name}</p>
+                        <p className='text-xs'>{props.name}</p>
                     </div>
                     <div className='text-left'>
                         <span>
